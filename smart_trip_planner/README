@@ -1,0 +1,165 @@
+🗺️ Tourist Itinerary Planner
+📘 Overview
+
+Tourist Itinerary Planner is a smart web-based project that helps tourists plan their trip efficiently by selecting, scheduling, and mapping the best places to visit based on their available time and preferences.
+
+It uses three powerful algorithms — Knapsack, Activity Selection, and Hamiltonian Path — to optimize the itinerary for:
+
+Best possible enjoyment (ratings)
+
+Time efficiency (no overlaps)
+
+Logical travel route (each place visited once)
+
+This project can be applied to any city or travel destination, not just one specific location.
+
+🚀 Features
+
+✅ Upload CSV file of tourist spots
+✅ Generate optimized travel plan based on available hours
+✅ Visualize route order using interactive graphs and charts
+✅ View detailed itinerary within the same web UI
+✅ Works for any city (Goa, Mumbai, Jaipur, etc.)
+
+🧩 Tech Stack
+Component	Technology Used
+Frontend	HTML5, CSS3, JavaScript
+Visualization	Chart.js, D3.js (for route graph)
+Backend Logic	Python (Flask or pure JS implementation possible)
+Algorithms	Knapsack, Activity Selection, Hamiltonian Path
+Data Input	CSV File (Place, Time (hrs), Rating)
+📂 Folder Structure
+Tourist-Itinerary-Planner/
+│
+├── index.html         # Main UI
+├── style.css          # Styling and layout
+├── script.js          # Core logic + algorithms + chart visualization
+├── sample.csv         # Example data for Goa or other cities
+└── README.md          # Documentation (this file)
+
+📊 CSV Format
+
+The planner uses a simple CSV file as input.
+Here’s the format:
+
+Place,Time (hrs),Rating
+Baga Beach,2,9
+Fort Aguada,3,8
+Anjuna Market,1.5,7
+Basilica of Bom Jesus,2,8
+Dudhsagar Falls,4,10
+
+⚙️ How It Works (Algorithm Flow)
+1. 🎒 Knapsack Algorithm
+
+Purpose: Selects which tourist places to include in the trip.
+
+Input: Each place’s time required and rating.
+
+Logic: Maximizes total rating without exceeding total available time.
+
+Output: List of places that give best satisfaction under time limit.
+
+💡 Example:
+If you have 8 hours, it picks the best combination of places within 8 hours total.
+
+2. ⏰ Activity Selection Algorithm
+
+Purpose: Schedules chosen places in non-overlapping time slots.
+
+Logic: Greedy approach — always pick the next activity that finishes earliest.
+
+Output: Proper daily schedule with no overlaps.
+
+💡 Example:
+Visits are ordered by available time window — e.g., 9–11 (Beach), 11–13 (Museum), 14–16 (Market).
+
+3. 🗺️ Hamiltonian Path Algorithm
+
+Purpose: Determines the route visiting every selected place exactly once.
+
+Logic: Connects all places like nodes in a graph.
+
+Output: A route such as Beach → Fort → Museum → Market.
+
+💡 If distances are added, this becomes the Travelling Salesman Problem (TSP) for the shortest path.
+
+🌐 Visualization
+
+The planner UI displays:
+
+📈 Bar chart — shows time and ratings for each selected place.
+
+🗺️ Graph visualization — shows connected route between places (Hamiltonian path).
+
+📅 Itinerary summary — table of day plan with order, time, and rating.
+
+🧠 Example Output (Goa)
+
+User Input:
+Total available time = 8 hours
+Uploaded CSV = list of 8–10 Goa places
+
+Output:
+
+Selected (Knapsack): Beach, Fort, Museum, Market
+
+Scheduled (Activity Selection): Morning → Evening slots
+
+Route (Hamiltonian): Beach → Fort → Museum → Market
+
+Displayed as:
+
+Timeline of places
+
+Graph connecting all spots
+
+Ratings vs. time chart
+
+🧰 How to Run
+
+Save the project files in a folder.
+
+Open index.html in any browser.
+
+Upload a CSV file (as per the format above).
+
+Click “Generate Itinerary”.
+
+The optimized itinerary, chart, and map visualization appear instantly in the UI.
+
+🧾 Use Cases
+
+Personal trip planning
+
+Tourism websites
+
+Travel agencies’ automation systems
+
+College projects (AI, ML, or Optimization based)
+
+🧠 Algorithm Summary
+Algorithm	Problem Solved	Approach	Output
+Knapsack	Selects best places under time limit	Dynamic Programming	Optimal subset of places
+Activity Selection	Arranges activities efficiently	Greedy	Non-overlapping schedule
+Hamiltonian Path	Finds logical route among places	Backtracking / Graph traversal	Route covering all places once
+🧑‍💻 Future Enhancements
+
+Integrate Google Maps API for real coordinates & distances
+
+Add AI-based travel recommendation
+
+Add multiple days itinerary support
+
+Implement shortest route optimization (TSP)
+
+👩‍🏫 Ideal for
+
+🎓 B.Tech / Engineering students (CSE, IT)
+📚 Courses: Data Structures, Algorithms, AI, IoT, or Software Engineering
+💡 Type: Minor/Major Project with real-life impact
+
+🏁 Conclusion
+
+The Tourist Itinerary Planner efficiently combines optimization and graph algorithms to generate a smart, personalized travel plan.
+It balances time, user satisfaction, and travel efficiency — making it a perfect blend of data structures and real-world application.
