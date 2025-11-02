@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Trip Planner 🌍</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h1>🌍 Smart Trip Planner</h1>
+  <p class="subtitle">Plan your travel smartly using data-driven optimization.</p>
+
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="text" name="trip_name" placeholder="Trip Name (e.g. Goa Trip)" required>
+    <input type="number" name="days" placeholder="Days (e.g. 2)" min="1" required>
+    <input type="file" name="file" accept=".csv" required>
+    <button type="submit">Generate Plan 🚀</button>
+  </form>
+
+  {% if itinerary %}
+  <div class="results">
+    <h2>📍 {{ trip_name }} ({{ days }} Days)</h2>
+    <p class="score">Total Rating Score: <strong>{{ score }}</strong></p>
+
+    {% for day, places in itinerary.items() %}
+    <div class="day-block">
+      <h3>{{ day }}</h3>
+      <table>
+        <tr><th>Place</th><th>Time (hrs)</th><th>Rating</th></tr>
+        {% for p in places %}
+        <tr>
+          <td>{{ p[0] }}</td>
+          <td>{{ p[1] }}</td>
+          <td>{{ p[2] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% endfor %}
+
+    <h2 class="chart-title">📊 Visual Insights</h2>
+    <div class="charts">
+      <div><img src="data:image/png;base64,{{ charts.pie }}" alt="Pie Chart"></div>
+      <div><img src="data:image/png;base64,{{ charts.bar }}" alt="Bar Chart"></div>
+      <div><img src="data:image/png;base64,{{ charts.time }}" alt="Line Chart"></div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #b3e5fc, #e1f5fe);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  width: 85%;
+  max-width: 1000px;
+}
+
+h1 {
+  color: #0077cc;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+.results {
+  margin-top: 30px;
+}
+
+.day-block {
+  background: #f9fcff;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #e0f0ff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #0077cc;
+  color: white;
+}
+
+.chart-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.charts img {
+  width: 250px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
